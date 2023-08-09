@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO APP</title>
+    <link rel="stylesheet" href="../public/style.css">
+</head>
+<body>
+    <div class="left-block">
+    <div >
+        <a class="todo" href="/">TODO APP</a>
+    </div>
+
+    <div >
+
+         <form class="main-form" action="/add/todo" method="post">
+            <input required="true" class="form" type="text" name="todo1" placeholder="Başlık Giriniz">
+            <input required="true" class="form" type="text" name="todo2" placeholder="Not Alın">
+
+            <input class="addTodo" type="submit" value="Add Todo"class="button">
+         </form>
+    </div>
+  </div>
+    <ul class="ul">
+        <% todo.forEach(todos => { %>
+            <li class="li1">BAŞLIK..:  <%= todos.todo1 %></li>
+            <li class="li2">İçerik..:  <%= todos.todo2 %></li>
+            <a class="delete" href="/delete/todo/<%= todos._id %>">Sil</a>
+        <% }) %>
+    </ul>
+   
+</body>
+</html>
